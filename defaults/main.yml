@@ -1,5 +1,4 @@
 ---
 
-# List of packags to install
-nodejs_packages: [ 'nodejs', 'nodejs-legacy' ]
+node_version: '0.12'
 
