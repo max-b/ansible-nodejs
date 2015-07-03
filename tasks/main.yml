@@ -20,9 +20,6 @@
 - name: Install Nodejs
   apt: name=nodejs update_cache=yes force=yes
 
-- name: Update npm
-  npm: name=npm global=yes state=latest
-
 - name: Get npm global temporary directory
   command: npm -g config get tmp
   register: nodejs_npm_tempdir
