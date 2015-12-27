@@ -1,5 +1,13 @@
 ---
 
+- name: Install prerequisites 
+  apt:
+    name: '{{ item }}'
+    state: 'present'
+    install_recommends: False
+  with_flattened:
+    - nodejs_prerequisites
+
 - name: Get upstream APT GPG key
   apt_key:
     id: '9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'
@@ -21,6 +29,7 @@
   apt:
     name: '{{ item }}'
     state: 'present'
+    update_cache: True
     install_recommends: False
   with_flattened:
     - nodejs_base_packages
